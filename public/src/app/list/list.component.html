@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="col-sm">
+      <h3>Product List</h3>
+      <div class="container" *ngFor="let p of prodList ">
+          <div class="card" style="width: 18rem;">
+              <img class="card-img-top" src="{{p.img_url}}" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">{{p.title}}</h5>
+                <p class="card-text">${{p.price}}</p>
+              </div>
+              <div class="container">
+                <div class="row">
+                  <div class="container" class="mx-auto">
+                    <div class="row">
+                        <div class="col-sm">
+                            <button type="submit" (click)="onEdit(p._id)" class="btn btn-primary">Edit</button>
+                        </div>
+                        <div class="col-sm">
+                            <button type="submit" (click)="onDelete(p._id)" class="btn btn-primary">Delete</button>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+      </div>
+  </div>
+</div>
+<router-outlet></router-outlet>
